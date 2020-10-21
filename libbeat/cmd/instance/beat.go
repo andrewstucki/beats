@@ -371,6 +371,7 @@ func (b *Beat) launch(settings Settings, bt beat.Creator) error {
 	if err != nil {
 		return err
 	}
+
 	defer func() {
 		if err := b.processing.Close(); err != nil {
 			logp.Warn("Failed to close global processing: %v", err)
